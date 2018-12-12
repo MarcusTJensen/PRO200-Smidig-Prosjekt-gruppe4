@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class DropdownSwitch : MonoBehaviour{
@@ -17,12 +16,6 @@ public class DropdownSwitch : MonoBehaviour{
 		if(target[index] != null){
 			target[index].GetComponent<Image>().sprite = newImage[index];
 		}
-		
-	}
-
-	public void test(bool active){
-		print("Test");
-		animator.SetBool("Open", active);
 		
 	}
 	
