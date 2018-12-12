@@ -124,8 +124,9 @@ GameObject:
   - component: {fileID: 246530595}
   - component: {fileID: 246530594}
   - component: {fileID: 246530593}
+  - component: {fileID: 246530596}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +189,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 246530594}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 246530596}
+        m_MethodName: LoadSelectedScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &246530594
@@ -225,6 +237,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246530591}
   m_CullTransparentMesh: 0
+--- !u!114 &246530596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246530591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneIndex: 2
+  sceneName: 
 --- !u!1 &256165721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1262,7 @@ GameObject:
   - component: {fileID: 1260740001}
   - component: {fileID: 1260740000}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HavnLogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1332,7 +1357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.7, y: -46.599976}
+  m_AnchoredPosition: {x: 0.0000017881, y: -46.6}
   m_SizeDelta: {x: 682.3, y: 93.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493199174
@@ -1468,6 +1493,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a28beffe38b206b489838648254c05d4, type: 3}
   - {fileID: 21300000, guid: 468e097893eb36543a41394fbebc98ba, type: 3}
   - {fileID: 21300000, guid: e3bfa3577d54e584081e31d01cfbeac0, type: 3}
+  animator: {fileID: 0}
 --- !u!1 &1546456579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,8 +1586,9 @@ GameObject:
   - component: {fileID: 1705448887}
   - component: {fileID: 1705448889}
   - component: {fileID: 1705448888}
+  - component: {fileID: 1705448890}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1582,8 +1609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -426, y: 0.79429}
-  m_SizeDelta: {x: 2024.6, y: 1422.2}
+  m_AnchoredPosition: {x: -426, y: 6.6}
+  m_SizeDelta: {x: 2024.6, y: 1555.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705448888
 MonoBehaviour:
@@ -1619,6 +1646,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1705448886}
   m_CullTransparentMesh: 0
+--- !u!95 &1705448890
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1705448886}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: acc239fd647353047b59047ef4afb293, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1858971555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,7 +1709,7 @@ GameObject:
   - component: {fileID: 1953895135}
   - component: {fileID: 1953895134}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: BackgroundFilter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1685,8 +1730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66.00001, y: -0.0019683838}
-  m_SizeDelta: {x: 2194.5, y: 1422.2}
+  m_AnchoredPosition: {x: 1.9, y: -1.9}
+  m_SizeDelta: {x: 834.4, y: 1464.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953895134
 MonoBehaviour:
