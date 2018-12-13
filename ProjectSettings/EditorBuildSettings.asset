@@ -7,14 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: 
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/FirstOpen.unity
     guid: e0f82ce4ae2d15f44b30ccfae3da81e5
   - enabled: 1
     path: Assets/Scenes/MapRoamingScene.unity
     guid: 541a4e22ed03ec14db8f25e5a88e8273
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ModeSelection.unity
     guid: 6b8facc543800c34bb771b2fb43a4f02
   m_configObjects: {}
