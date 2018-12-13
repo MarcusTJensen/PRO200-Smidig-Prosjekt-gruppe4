@@ -8,20 +8,35 @@ public class GPS : MonoBehaviour {
 
     public Text text;
 
-    private float latitude = 59.912666f;
-    private float longitude = 10.746467f;
+    [Header("Dont edit, just debug")]
+    
+    public float latitude = 59.912227f;
+    public float longitude = 10.757912f;
 
+    public Vector3 geoPos;
+    
+    public Vector3 factorUnit;
+    public Vector3 posUnit;
+
+    
+    
+    private Vector3 maxUnityCoords = new Vector3(250f, 0, 150f);
+    
+    private Vector3 minGCoords = new Vector3(59.904697f, 0, 10.725555f);
+    private Vector3 maxGCoords = new Vector3(59.915819f, 0, 10.762764f);
+    private Vector3 factor = new Vector3(0, 0, 0);
+    
     private bool debug = false;
 
 	
 	private void Start(){
+	    factor.x =  maxUnityCoords.x / (maxGCoords.x - minGCoords.x);
+	    factor.z =  maxUnityCoords.z / (maxGCoords.z - minGCoords.z);
+	    factorUnit = factor;
 	    //Instance = this;
         //DontDestroyOnLoad(gameObject);
 	    //StartCoroutine(StartLocationService());
 	    TranslateCoord();
-            
-            
-	    transform.position = new Vector3(longitude, 0, latitude);
 	}
 
     private IEnumerator StartLocationService() {
@@ -66,9 +81,13 @@ public class GPS : MonoBehaviour {
 
     private void TranslateCoord(){
         
-        
-        
+        Vector3 pos = new Vector3(0, 0, 0);
+        pos.z = (geoPos.x - minGCoords.x) * factor.x;
+        pos.x = (geoPos.z - minGCoords.z) * factor.z;
+        posUnit = pos;
 
+        transform.position = pos;
+        /*
         if(!debug){
             
             string sLat = latitude.ToString().Substring(4);
@@ -85,6 +104,7 @@ public class GPS : MonoBehaviour {
             latitude = fLat;
 
         }
+        */
         
         text.text = latitude + " : " + longitude;
         
