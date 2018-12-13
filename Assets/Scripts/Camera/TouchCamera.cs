@@ -9,8 +9,10 @@ public class TouchCamera : MonoBehaviour {
 	};
 	Vector2 oldTouchVector;
 	float oldTouchDistance;
+    public Camera m_OrthographicCamera;
 
-	void Update() {
+
+    void Update() {
 		if (Input.touchCount == 0) {
 			oldTouchPositions[0] = null;
 			oldTouchPositions[1] = null;
@@ -23,7 +25,7 @@ public class TouchCamera : MonoBehaviour {
 			else {
 				Vector2 newTouchPosition = Input.GetTouch(0).position;
 				
-				transform.position += transform.TransformDirection((Vector3)((oldTouchPositions[0] - newTouchPosition) * camera.orthographicSize / camera.pixelHeight * 2f));
+				transform.position += transform.TransformDirection((Vector3)((oldTouchPositions[0] - newTouchPosition) * m_OrthographicCamera.orthographicSize / m_OrthographicCamera.pixelHeight * 2f));
 				
 				oldTouchPositions[0] = newTouchPosition;
 			}
@@ -36,7 +38,7 @@ public class TouchCamera : MonoBehaviour {
 				oldTouchDistance = oldTouchVector.magnitude;
 			}
 			else {
-				Vector2 screen = new Vector2(camera.pixelWidth, camera.pixelHeight);
+				Vector2 screen = new Vector2(m_OrthographicCamera.pixelWidth, m_OrthographicCamera.pixelHeight);
 				
 				Vector2[] newTouchPositions = {
 					Input.GetTouch(0).position,
@@ -45,10 +47,10 @@ public class TouchCamera : MonoBehaviour {
 				Vector2 newTouchVector = newTouchPositions[0] - newTouchPositions[1];
 				float newTouchDistance = newTouchVector.magnitude;
 
-				transform.position += transform.TransformDirection((Vector3)((oldTouchPositions[0] + oldTouchPositions[1] - screen) * camera.orthographicSize / screen.y));
+				transform.position += transform.TransformDirection((Vector3)((oldTouchPositions[0] + oldTouchPositions[1] - screen) * m_OrthographicCamera.orthographicSize / screen.y));
 				transform.localRotation *= Quaternion.Euler(new Vector3(0, 0, Mathf.Asin(Mathf.Clamp((oldTouchVector.y * newTouchVector.x - oldTouchVector.x * newTouchVector.y) / oldTouchDistance / newTouchDistance, -1f, 1f)) / 0.0174532924f));
-				camera.orthographicSize *= oldTouchDistance / newTouchDistance;
-				transform.position -= transform.TransformDirection((newTouchPositions[0] + newTouchPositions[1] - screen) * camera.orthographicSize / screen.y);
+			    m_OrthographicCamera.orthographicSize *= oldTouchDistance / newTouchDistance;
+				transform.position -= transform.TransformDirection((newTouchPositions[0] + newTouchPositions[1] - screen) * m_OrthographicCamera.orthographicSize / screen.y);
 
 				oldTouchPositions[0] = newTouchPositions[0];
 				oldTouchPositions[1] = newTouchPositions[1];
