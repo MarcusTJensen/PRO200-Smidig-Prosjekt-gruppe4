@@ -65,8 +65,8 @@ public class GPS : MonoBehaviour {
 	    factorUnit = factor;
 	    //Instance = this;
         //DontDestroyOnLoad(gameObject);
-	    //StartCoroutine(StartLocationService());
-	    TranslateCoord();
+	    StartCoroutine(StartLocationService());
+	    //TranslateCoord();
 	}
 
     private IEnumerator StartLocationService() {
@@ -115,13 +115,13 @@ public class GPS : MonoBehaviour {
         Vec3D pos = new Vec3D(0, 0, 0);
         pos.z = factor.x * (latitude - minGCoords.x);
         pos.x = factor.z * (longitude - minGCoords.z);
-        print(longitude + " : " + minGCoords.z);
+        //print(longitude + " : " + minGCoords.z);
         posUnit = pos;
 
         transform.position = pos.GetVecFloat();
 
-        double t = factor.x * (latitude - minGCoords.x);
-        print(t + " = " + factor.x + " * (" + latitude + " - " + minGCoords.x + ")");
+        //double t = factor.x * (latitude - minGCoords.x);
+        //print(t + " = " + factor.x + " * (" + latitude + " - " + minGCoords.x + ")");
         /*
         if(!debug){
             
@@ -142,10 +142,7 @@ public class GPS : MonoBehaviour {
         */
 
         text.text = latitude + " : " + longitude;
-
-        if(debug){
-            TranslateCoord();
-        }
+        
 
     }
 
