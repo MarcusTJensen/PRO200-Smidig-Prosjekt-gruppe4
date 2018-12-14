@@ -82,8 +82,8 @@ public class GPS : MonoBehaviour {
     private void TranslateCoord(){
         
         Vector3 pos = new Vector3(0, 0, 0);
-        pos.z = (geoPos.x - minGCoords.x) * factor.x;
-        pos.x = (geoPos.z - minGCoords.z) * factor.z;
+        pos.x = (geoPos.x - minGCoords.x) * factor.x;
+        pos.z = (geoPos.z - minGCoords.z) * factor.z;
         posUnit = pos;
 
         transform.position = pos;
