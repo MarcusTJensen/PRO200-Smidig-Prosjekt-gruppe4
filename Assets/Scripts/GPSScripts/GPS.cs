@@ -9,19 +9,16 @@ public class GPS : MonoBehaviour {
     public Text text;
 
     [Header("Dont edit, just debug")]
-    
-    public float latitude = 59.912227f;
-    public float longitude = 10.757912f;
+
+    //location cords for: Sentrum  
+    public float latitude = 59.910236f;
+    public float longitude = 10.749435f;
 
     public Vector3 geoPos;
-    
     public Vector3 factorUnit;
     public Vector3 posUnit;
-
-    
     
     private Vector3 maxUnityCoords = new Vector3(250f, 0, 150f);
-    
     private Vector3 minGCoords = new Vector3(59.904697f, 0, 10.725555f);
     private Vector3 maxGCoords = new Vector3(59.915819f, 0, 10.762764f);
     private Vector3 factor = new Vector3(0, 0, 0);
@@ -87,8 +84,8 @@ public class GPS : MonoBehaviour {
         posUnit = pos;
 
         transform.position = pos;
-        /*
-        if(!debug){
+        
+        /*if(!debug){
             
             string sLat = latitude.ToString().Substring(4);
             sLat = sLat.Insert(1, ".");
@@ -103,8 +100,7 @@ public class GPS : MonoBehaviour {
             longitude = fLng;
             latitude = fLat;
 
-        }
-        */
+        }*/
         
         text.text = latitude + " : " + longitude;
         
