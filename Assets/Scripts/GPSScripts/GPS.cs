@@ -28,6 +28,8 @@ public class GPS : MonoBehaviour {
 
     [Header("Dont edit, just debug")]
     
+    public Text debugText;
+    
     public double latitude = 59.912797f;
     public double longitude = 10.753920f;
 
@@ -70,10 +72,12 @@ public class GPS : MonoBehaviour {
 	}
 
     private IEnumerator StartLocationService() {
+        debugText.text = "Starting Routine";
         yield return new WaitForSeconds(3);
 
         while(true){
             if (!Input.location.isEnabledByUser){
+                debugText.text = "User has not enabled GPS";
                 Debug.Log("User has not enabled GPS");
                 yield break;
             }
@@ -81,16 +85,19 @@ public class GPS : MonoBehaviour {
             Input.location.Start();
             int maxWait = 20;
             while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0){
+                debugText.text = "Waiting.. " + maxWait;
                 yield return new WaitForSeconds(1);
                 maxWait--;
             }
     
             if (maxWait <= 0){
+                debugText.text = "Timed out";
                 Debug.Log("Timed out");
                 yield break;
             }
     
             if (Input.location.status == LocationServiceStatus.Failed){
+                debugText.text = "Unable to determin device location";
                 Debug.Log("Unable to determin device location");
                 yield break;
             }
@@ -101,6 +108,8 @@ public class GPS : MonoBehaviour {
             
             TranslateCoord();
             
+            debugText.text = "Position set";
+            yield return new WaitForSeconds(3);
             
             //transform.position = new Vec3D(longitude, 0, latitude).GetVecFloat();
             
