@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 101168781}
   - component: {fileID: 101168780}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ RectTransform:
   m_Children:
   - {fileID: 1407482292}
   m_Father: {fileID: 1090936125}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35125002, y: 0}
   m_AnchorMax: {x: 0.65374994, y: 1}
@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 348202712}
   - component: {fileID: 348202711}
   - component: {fileID: 348202710}
+  - component: {fileID: 348202713}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -366,7 +367,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348202711}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 348202713}
+        m_MethodName: LoadSelectedScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &348202711
@@ -403,6 +415,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348202708}
   m_CullTransparentMesh: 0
+--- !u!114 &348202713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 348202708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneIndex: 1
+  sceneName: 
 --- !u!1 &387552272
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Exit
 --- !u!222 &604910494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -729,7 +754,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Back
 --- !u!222 &793343572
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -850,8 +875,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 348202709}
-  - {fileID: 1603315186}
   - {fileID: 101168779}
+  - {fileID: 1603315186}
   m_Father: {fileID: 738008771}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -924,9 +949,18 @@ MonoBehaviour:
   text: {fileID: 0}
   latitude: 59.912796
   longitude: 10.752689
-  geoPos: {x: 0, y: 0, z: 0}
-  factorUnit: {x: 0, y: 0, z: 0}
-  posUnit: {x: 0, y: 0, z: 0}
+  geoPos:
+    x: 0
+    y: 0
+    z: 0
+  factorUnit:
+    x: 0
+    y: 0
+    z: 0
+  posUnit:
+    x: 0
+    y: 0
+    z: 0
 --- !u!4 &1187652840
 Transform:
   m_ObjectHideFlags: 0
@@ -1162,7 +1196,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Nothing
 --- !u!222 &1407482294
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1276,8 +1310,9 @@ GameObject:
   - component: {fileID: 1603315189}
   - component: {fileID: 1603315188}
   - component: {fileID: 1603315187}
+  - component: {fileID: 1603315190}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,7 +1330,7 @@ RectTransform:
   m_Children:
   - {fileID: 604910492}
   m_Father: {fileID: 1090936125}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7475, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1340,7 +1375,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1603315188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1603315190}
+        m_MethodName: LoadSelectedScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1603315188
@@ -1377,6 +1423,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603315185}
   m_CullTransparentMesh: 0
+--- !u!114 &1603315190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603315185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneIndex: 0
+  sceneName: 
 --- !u!1 &1746463682
 GameObject:
   m_ObjectHideFlags: 0

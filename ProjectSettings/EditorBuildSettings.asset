@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/LanguageScene.unity
+    guid: 3afd8ff55f78da249a5314dea532a780
+  - enabled: 1
     path: Assets/Scenes/ModeSelection.unity
     guid: 6b8facc543800c34bb771b2fb43a4f02
   - enabled: 1
