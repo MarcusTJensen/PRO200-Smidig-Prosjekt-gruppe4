@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ModeSelection.unity
     guid: 6b8facc543800c34bb771b2fb43a4f02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MapRoamingScene.unity
     guid: 541a4e22ed03ec14db8f25e5a88e8273
+  - enabled: 1
+    path: Assets/Scenes/Points/PaleetOgPalehagen.unity
+    guid: dcca8dbf71e0c6e498b0eebc7bc3c433
   m_configObjects: {}
