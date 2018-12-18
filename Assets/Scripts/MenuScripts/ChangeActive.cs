@@ -8,6 +8,7 @@ public class ChangeActive : MonoBehaviour {
 
 
 	public void MakeChange(){
+		newState = !newState;
 		targetToChange.SetActive(newState);
 	}
 	
