@@ -72,6 +72,7 @@ public class GPS : MonoBehaviour {
 
     private IEnumerator StartLocationService() {
         //debugText.text = "Starting Routine";
+        yield return new WaitForSeconds(2);
         
         if (!Input.location.isEnabledByUser){
             //debugText.text = "User has not enabled GPS";
@@ -81,7 +82,7 @@ public class GPS : MonoBehaviour {
     
         Input.location.Start();
         
-        int maxWait = 20;
+        int maxWait = 10;
         while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0){
             //debugText.text = "Waiting.. " + maxWait;
             yield return new WaitForSeconds(1);
@@ -123,6 +124,7 @@ public class GPS : MonoBehaviour {
             
             TranslateCoord();
             
+            yield return new WaitForSeconds(0.25f);
         }
         
     }
