@@ -21,7 +21,6 @@ public class SwipeMenuScript : MonoBehaviour
 	void Update ()
 	{
 	    swipeLeft = swipeRight = false;
-        #region Mobile Inputs
 
 	    if (Input.touches.Length != 0)
 	    {
