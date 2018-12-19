@@ -46,16 +46,18 @@ public class GPS : MonoBehaviour {
     
     private bool debug = false;
 
+    /*
     private void DoCalcTest(){
         
         double fac = maxUnityCoords.x / (maxGCoords.x - minGCoords.x);
-        print(maxUnityCoords.x + " / (" + maxGCoords.x + " - " + minGCoords.x + ") = " + fac);
+        //print(maxUnityCoords.x + " / (" + maxGCoords.x + " - " + minGCoords.x + ") = " + fac);
         
         double posi = fac * (latitude - minGCoords.x);
-        print(fac + " * (" + latitude + " - " + minGCoords.x + ") = " + posi);
+        //print(fac + " * (" + latitude + " - " + minGCoords.x + ") = " + posi);
         
     }
-
+    */
+    
 	private void Start(){
 	    //DoCalcTest();
 	    //return;
@@ -69,11 +71,10 @@ public class GPS : MonoBehaviour {
 	}
 
     private IEnumerator StartLocationService() {
-        debugText.text = "Starting Routine";
-        yield return new WaitForSeconds(3);
+        //debugText.text = "Starting Routine";
         
         if (!Input.location.isEnabledByUser){
-            debugText.text = "User has not enabled GPS";
+            //debugText.text = "User has not enabled GPS";
             Debug.Log("User has not enabled GPS");
             yield break;
         }
@@ -82,13 +83,13 @@ public class GPS : MonoBehaviour {
         
         int maxWait = 20;
         while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0){
-            debugText.text = "Waiting.. " + maxWait;
+            //debugText.text = "Waiting.. " + maxWait;
             yield return new WaitForSeconds(1);
             maxWait--;
         }
         
         if (maxWait <= 0){
-            debugText.text = "Timed out";
+            //debugText.text = "Timed out";
             Debug.Log("Timed out");
             yield break;
         }
@@ -96,7 +97,9 @@ public class GPS : MonoBehaviour {
         while(true){
     
             if (Input.location.status == LocationServiceStatus.Failed){
+                debugText.gameObject.SetActive(true);
                 debugText.text = "Unable to determin device location";
+                //debugText.text = "Unable to determin device location";
                 Debug.Log("Unable to determin device location");
                 yield break;
             }
@@ -104,25 +107,21 @@ public class GPS : MonoBehaviour {
             latitude = Input.location.lastData.latitude;
             longitude = Input.location.lastData.longitude;
 
+            /*
             switch(Input.location.status){
                 case LocationServiceStatus.Failed:
-                    debugText.text = "Failed";
+                    //debugText.text = "Failed";
                     break;
                 case LocationServiceStatus.Running:
-                    debugText.text = "Running";
+                    //debugText.text = "Running";
                     break;
                 case LocationServiceStatus.Stopped:
-                    debugText.text = "Stopped";
+                    //debugText.text = "Stopped";
                     break;
             }
-            
+            */
             
             TranslateCoord();
-            
-            
-            yield return new WaitForSeconds(3);
-            
-            //transform.position = new Vec3D(longitude, 0, latitude).GetVecFloat();
             
         }
         
@@ -134,10 +133,11 @@ public class GPS : MonoBehaviour {
         Vec3D pos = new Vec3D(0, 0, 0);
         pos.z = factor.x * (latitude - minGCoords.x);
         pos.x = factor.z * (longitude - minGCoords.z);
-        //print(longitude + " : " + minGCoords.z);
         posUnit = pos;
 
         transform.position = pos.GetVecFloat();
+        
+        text.text = latitude + " : " + longitude;
 
         //double t = factor.x * (latitude - minGCoords.x);
         //print(t + " = " + factor.x + " * (" + latitude + " - " + minGCoords.x + ")");
@@ -159,9 +159,6 @@ public class GPS : MonoBehaviour {
             
         }
         */
-        
-        text.text = latitude + " : " + longitude;
-        
 
     }
 
