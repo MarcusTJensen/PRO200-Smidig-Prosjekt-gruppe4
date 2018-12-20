@@ -20,6 +20,7 @@ public class Cam360Controller : MonoBehaviour{
         if(vrEnabled){
             vrEnabled = false;
             XRSettings.LoadDeviceByName("None");
+            Screen.orientation = ScreenOrientation.Portrait;
         } else{
             vrEnabled = true;
             XRSettings.LoadDeviceByName("cardboard");
@@ -32,6 +33,7 @@ public class Cam360Controller : MonoBehaviour{
             XRSettings.LoadDeviceByName("cardboard");
         } else{
             XRSettings.LoadDeviceByName("None");
+            Screen.orientation = ScreenOrientation.Portrait;
         }
     }
 
@@ -40,12 +42,11 @@ public class Cam360Controller : MonoBehaviour{
             cardboardView = false;
             XRSettings.enabled = false;
             Screen.orientation = ScreenOrientation.Portrait;
-            //XRSettings.LoadDeviceByName("None");
         } else{
             cardboardView = true;
+            transform.rotation = Quaternion.identity;
             XRSettings.enabled = true;
-            XRSettings.LoadDeviceByName("cardboard");
-            //XRSettings.LoadDeviceByName("cardboard");
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
     }
     
