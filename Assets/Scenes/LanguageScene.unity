@@ -317,8 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 1
-  sceneName: 
+  sceneIndex: -1
+  sceneName: ModeSelectionScene
 --- !u!1 &256165721
 GameObject:
   m_ObjectHideFlags: 0
