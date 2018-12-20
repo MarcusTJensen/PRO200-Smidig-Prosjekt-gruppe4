@@ -47,8 +47,8 @@ public class SwipeMenuScript : MonoBehaviour
 	    }
 
         //Reaction distance
-	    if (swipeDelta.magnitude > 150)
-	    {
+	    if (swipeDelta.magnitude > 125){
+		    isDraging = false;
             //Which direction
 	        float x = swipeDelta.x;
 	        float y = swipeDelta.y;
