@@ -6,15 +6,23 @@ public class Cam360Controller : MonoBehaviour{
     private bool vrEnabled = false;
     private bool cardboardView = false;
 
+	private float timer, timeLim = 0.03333333333333333f;
+
     private void Awake(){
         ToggleVR(true);
     }
 
     private void Update(){
-        if(!cardboardView && vrEnabled){
-            transform.rotation = InputTracking.GetLocalRotation(XRNode.CenterEye);
-        }
-    }
+	    
+	    
+	    if(!cardboardView && vrEnabled){
+		    Quaternion rot = InputTracking.GetLocalRotation(XRNode.CenterEye);
+			//TODO: Fix sensitivity, check nodes for change in rotation/velocity and move only if over x or something
+
+	    }
+	    
+	    
+	}
 
     public void ToggleVR(){
         if(vrEnabled){
