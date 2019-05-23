@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &159755927
+--- !u!1001 &82299027
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -229,7 +229,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 710479440}
+      objectReference: {fileID: 1123681620}
     - target: {fileID: 114212386265876062, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -249,7 +249,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 710479440}
+      objectReference: {fileID: 1123681620}
     - target: {fileID: 114212386265876062, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -274,7 +274,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 710479440}
+      objectReference: {fileID: 1123681620}
     - target: {fileID: 114853958159320778, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -355,7 +355,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &710479439
+--- !u!1001 &1123681619
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -394,14 +394,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114005058719092314, guid: bfd0b8159f002094a9bb942dc1aca937,
+        type: 2}
+      propertyPath: texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 88b8db7797ce83c42b749072f95172e5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd0b8159f002094a9bb942dc1aca937, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &710479440 stripped
+--- !u!114 &1123681620 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114069876236359230, guid: bfd0b8159f002094a9bb942dc1aca937,
     type: 2}
-  m_PrefabInternal: {fileID: 710479439}
+  m_PrefabInternal: {fileID: 1123681619}
   m_Script: {fileID: 11500000, guid: b1f9dc1015acd7a44a2187defc3c454d, type: 3}
 --- !u!1 &1908025138
 GameObject:
