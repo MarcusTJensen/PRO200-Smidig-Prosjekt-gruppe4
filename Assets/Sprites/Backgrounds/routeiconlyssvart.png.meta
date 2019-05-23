@@ -1,17 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Untitled2.png.meta
-guid: 6be0d78191f18bc489e17dbb1000f530
+guid: 842efa6d79fa6f247829fcb40e707b70
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
-=======
-guid: a9acadf58045b404fb26b52a13d9460e
-TextureImporter:
-  fileIDToRecycleName: {}
-  externalObjects: {}
-  serializedVersion: 7
->>>>>>> a9870ffb435292a013b47b446ad0f9a1bfde39ec:Assets/Sprites/ButtonBorders/bordergold.png.meta
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -106,18 +98,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 
-<<<<<<< HEAD:Assets/Untitled2.png.meta
     internalID: 0
-=======
->>>>>>> a9870ffb435292a013b47b446ad0f9a1bfde39ec:Assets/Sprites/ButtonBorders/bordergold.png.meta
     vertices: []
     indices: 
     edges: []
     weights: []
-<<<<<<< HEAD:Assets/Untitled2.png.meta
     secondaryTextures: []
-=======
->>>>>>> a9870ffb435292a013b47b446ad0f9a1bfde39ec:Assets/Sprites/ButtonBorders/bordergold.png.meta
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
