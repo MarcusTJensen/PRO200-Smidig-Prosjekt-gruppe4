@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OnLookController : MonoBehaviour{
 
-	public float lookTime;
-	public float lookTimer = 2f;
+	public float lookTimer;
+	public float lookTime = 2f;
+	public Slider slider;
+	
 	
 	private Camera cam;
 	private GameObject objLookedAt;
 
 	private void Awake(){
 		cam = GetComponent<Camera>();
+		slider.maxValue = lookTime;
 	}
 
 	private void Update(){
@@ -22,16 +26,17 @@ public class OnLookController : MonoBehaviour{
 		if(Physics.Raycast(ray, out hit, 50f)){
 			if(objLookedAt != hit.transform.gameObject){
 				objLookedAt = hit.transform.gameObject;
-				lookTime = 0;
+				lookTimer = 0;
 			}
-			if(lookTime < lookTimer){
-				lookTime += Time.deltaTime;
+			if(lookTimer < lookTime){
+				lookTimer += Time.deltaTime;
 			} else{
 				//TODO: Activate look action on other object
 			}
 		} else{
-			lookTime = 0;
+			lookTimer = 0;
 		}
+		slider.value = lookTimer;
 		
 	}
 	
