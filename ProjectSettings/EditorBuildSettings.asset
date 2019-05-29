@@ -18,15 +18,48 @@ EditorBuildSettings:
     path: Assets/Scenes/MapRoamingScene.unity
     guid: 541a4e22ed03ec14db8f25e5a88e8273
   - enabled: 0
-    path: Assets/Scenes/Points/8_Utenfor_Trollboden_Scene.unity
-    guid: fdbae68fcd8d0004783cd33b12232617
-  - enabled: 0
-    path: Assets/Scenes/Points/10_Gronningen_Scene.unity
-    guid: 442abacfcea8c1347a1f45779a73b943
-  - enabled: 0
+    path: Assets/Scenes/360TestScene.unity
+    guid: 345a3eb7a883fdd49a6511ead9af97d3
+  - enabled: 1
+    path: Assets/Scenes/Points/1_Kjopmann_Meyer_Scene.unity
+    guid: 840190b4fee2f114f8b4261247ccd10b
+  - enabled: 1
+    path: Assets/Scenes/Points/2_Inngang_til_Paleet_Scene.unity
+    guid: e72eacc107a4c5d42af905c373649fcb
+  - enabled: 1
+    path: Assets/Scenes/Points/3_Fred.Olsengt_Prinsensgt_Scene.unity
+    guid: 94b8fda1c85f0e54aac5ac1462c8b9b7
+  - enabled: 1
+    path: Assets/Scenes/Points/4_Paleet_og_Palehaagen_Scene.unity
+    guid: cdf488b09fdd63b4eb66e7bf86b4ac47
+  - enabled: 1
+    path: Assets/Scenes/Points/5_Tollbugt_Scene.unity
+    guid: 38120e4f5fcc233479588051cf5cc8ba
+  - enabled: 1
     path: Assets/Scenes/Points/6_Strandgata_Tollbugata_Scene.unity
     guid: e7094afeee5c8af45910fc3cd06bbc52
   - enabled: 1
-    path: Assets/Scenes/360TestScene.unity
-    guid: 345a3eb7a883fdd49a6511ead9af97d3
+    path: Assets/Scenes/Points/7_FredOlsensgt_Scene.unity
+    guid: ec0e61133008bf141a4924f84b91ce2e
+  - enabled: 1
+    path: Assets/Scenes/Points/8_Utenfor_Trollboden_Scene.unity
+    guid: fdbae68fcd8d0004783cd33b12232617
+  - enabled: 1
+    path: Assets/Scenes/Points/9_Pa_Tollbodbryggen.unity
+    guid: 9b1c223ea19dda0489781602b88a6ab5
+  - enabled: 1
+    path: Assets/Scenes/Points/10_Gronningen_Scene.unity
+    guid: 442abacfcea8c1347a1f45779a73b943
+  - enabled: 1
+    path: Assets/Scenes/Points/11_Fisketorget_Scene.unity
+    guid: fa1fbde3b23e0b94f9673e42c4a8b7a5
+  - enabled: 1
+    path: Assets/Scenes/Points/12_Havnebassenget_utenfor_Palehagen_Scene.unity
+    guid: 7311b101b4f42f347b87e306c14b269a
+  - enabled: 1
+    path: Assets/Scenes/Points/13_Bordtomter_Scene.unity
+    guid: 2bc40e7e0306b3d4f8789fdbdcbca0be
+  - enabled: 1
+    path: Assets/Scenes/Points/14_Havnebassenget_ved_BrinchsKran_Scene.unity
+    guid: eb7ee3a0445fba34589be675dd0d4216
   m_configObjects: {}
