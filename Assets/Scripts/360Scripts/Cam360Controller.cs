@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class Cam360Controller : MonoBehaviour{
+public class Cam360Controller : MonoBehaviour {
 
+    public Toggle toggle;
+    
     private bool vrEnabled = false;
     private bool cardboardView = false;
 
@@ -13,13 +16,14 @@ public class Cam360Controller : MonoBehaviour{
     }
 
     private void Update(){
-	    
-	    
+        
+        //toggle.isOn = cardboardView;
 	    if(!cardboardView && vrEnabled){
 		    Quaternion rot = InputTracking.GetLocalRotation(XRNode.CenterEye);
-			//TODO: Fix sensitivity, check nodes for change in rotation/velocity and move only if over x or something
+            transform.rotation = rot;
+            //TODO: Fix sensitivity, check nodes for change in rotation/velocity and move only if over x or something
 
-	    }
+        }
 	    
 	    
 	}

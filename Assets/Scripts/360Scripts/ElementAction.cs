@@ -1,21 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System;
 using UnityEngine;
 
 public class ElementAction : MonoBehaviour {
 	
+	[Serializable]
 	public struct Action{
 		public ActionType actionType;
 		public Transform movePosition;
+		public string consoleText;
 	}
-
+	
 	public enum ActionType{
 		PlaySound,
 		StopSound,
-		EnterRoom
+		EnterRoom,
+		PrintConsole
 	}
-
+	
 	public Action action;
 	
 	private AudioSource aud;
@@ -34,7 +35,10 @@ public class ElementAction : MonoBehaviour {
 				break;
 			case ActionType.EnterRoom:
 				aud.Stop();
-			//todo	
+				//todo	
+				break;
+			case ActionType.PrintConsole:
+				print(action.consoleText);
 				break;
 		}
 	}
