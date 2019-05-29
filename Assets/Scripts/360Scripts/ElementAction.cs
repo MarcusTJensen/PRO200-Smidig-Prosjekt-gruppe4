@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Internal.UIElements;
 
 public class ElementAction : MonoBehaviour {
 	
@@ -7,6 +8,7 @@ public class ElementAction : MonoBehaviour {
 	public struct Action{
 		public ActionType actionType;
 		public Transform movePosition;
+		public GameObject panel;
 		public string consoleText;
 	}
 	
@@ -14,6 +16,8 @@ public class ElementAction : MonoBehaviour {
 		PlaySound,
 		StopSound,
 		EnterRoom,
+		OpenPanel,
+		ClosePanel,
 		PrintConsole
 	}
 	
@@ -36,6 +40,12 @@ public class ElementAction : MonoBehaviour {
 			case ActionType.EnterRoom:
 				aud.Stop();
 				//todo	
+				break;
+			case ActionType.OpenPanel:
+				action.panel.SetActive(true);
+				break;
+			case ActionType.ClosePanel:
+				action.panel.SetActive(false);
 				break;
 			case ActionType.PrintConsole:
 				print(action.consoleText);
