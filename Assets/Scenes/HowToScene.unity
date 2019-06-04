@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 125251636}
   - component: {fileID: 125251635}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: VRImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149614313}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 161205543}
   - component: {fileID: 161205542}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: VRTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +264,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Take a guided tour and let \nthe app create a route \nFor you."
+  m_Text: 'Press this button to start the
+
+    virtual reality experience'
 --- !u!222 &161205543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -285,7 +287,7 @@ GameObject:
   - component: {fileID: 462773680}
   - component: {fileID: 462773679}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: 360Img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,7 +305,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149614313}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -359,7 +361,7 @@ GameObject:
   - component: {fileID: 660702897}
   - component: {fileID: 660702896}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: MapImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,7 +379,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149614313}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -433,7 +435,7 @@ GameObject:
   - component: {fileID: 687533323}
   - component: {fileID: 687533322}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: GuideImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,7 +509,7 @@ GameObject:
   - component: {fileID: 1001801009}
   - component: {fileID: 1001801008}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: GuideTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -525,7 +527,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149614313}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -565,7 +567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Take a guided tour and let \nthe app create a route \nFor you."
+  m_Text: "Roam free around the map,\nand create your own \nAdventure"
 --- !u!222 &1001801009
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -586,7 +588,7 @@ GameObject:
   - component: {fileID: 1006048263}
   - component: {fileID: 1006048262}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: 360Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,7 +606,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149614313}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -644,7 +646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Take a guided tour and let \nthe app create a route \nFor you."
+  m_Text: "Look around the virtual \nworld In a 360 view"
 --- !u!222 &1006048263
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -666,7 +668,7 @@ GameObject:
   - component: {fileID: 1081761892}
   - component: {fileID: 1081761891}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SelectBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -806,6 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245c3666b018976448ffd9c94847459c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panels: []
 --- !u!114 &1149614310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,12 +883,12 @@ RectTransform:
   - {fileID: 1357291045}
   - {fileID: 2050457162}
   - {fileID: 687533321}
-  - {fileID: 462773678}
-  - {fileID: 660702895}
-  - {fileID: 125251634}
-  - {fileID: 2025837548}
   - {fileID: 1001801007}
+  - {fileID: 462773678}
   - {fileID: 1006048261}
+  - {fileID: 660702895}
+  - {fileID: 2025837548}
+  - {fileID: 125251634}
   - {fileID: 161205541}
   - {fileID: 1081761890}
   m_Father: {fileID: 0}
@@ -909,7 +912,7 @@ GameObject:
   - component: {fileID: 1357291047}
   - component: {fileID: 1357291046}
   m_Layer: 5
-  m_Name: Image
+  m_Name: backgroundImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1256,7 +1259,7 @@ GameObject:
   - component: {fileID: 2025837550}
   - component: {fileID: 2025837549}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MapTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1274,7 +1277,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149614313}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1335,7 +1338,7 @@ GameObject:
   - component: {fileID: 2040745638}
   - component: {fileID: 2040745637}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MainTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
