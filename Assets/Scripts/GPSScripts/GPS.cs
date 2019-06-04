@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions.Comparers;
 using UnityEngine.UI;
 
 public class GPS : MonoBehaviour {
@@ -43,6 +44,8 @@ public class GPS : MonoBehaviour {
     private Vec3D maxGCoords = new Vec3D(59.915819f, 0, 10.763828f);
     private Vec3D minGCoords = new Vec3D(59.904071f, 0, 10.725555f);
     private Vec3D factor = new Vec3D(0, 0, 0);
+
+    private float lastHeading = 0;
     
     private bool debug = false;
 
@@ -73,16 +76,13 @@ public class GPS : MonoBehaviour {
 
     private void Update(){
         float newHeading = Input.compass.magneticHeading;
-        float headingTest = newHeading - StaticScript.playerRotation;
-        if(headingTest > 15 || headingTest < -15){
-            if(headingTest > 350 || headingTest < -350){
-                StaticScript.playerRotation = 0;
-            } else {
-                StaticScript.playerRotation = newHeading;
-            }
-        }
+
+        StaticScript.playerRotation = Mathf.LerpAngle(StaticScript.playerRotation, newHeading, Time.deltaTime * 2);
+        
         transform.rotation = Quaternion.Euler(0,  StaticScript.playerRotation + 45, 0);
         //debugText.text = StaticScript.playerRotation + "";
+        lastHeading = newHeading;
+        
     }
     
     
