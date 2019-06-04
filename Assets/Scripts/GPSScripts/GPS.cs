@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions.Comparers;
 using UnityEngine.UI;
 
 public class GPS : MonoBehaviour {
@@ -43,6 +44,8 @@ public class GPS : MonoBehaviour {
     private Vec3D maxGCoords = new Vec3D(59.915819f, 0, 10.763828f);
     private Vec3D minGCoords = new Vec3D(59.904071f, 0, 10.725555f);
     private Vec3D factor = new Vec3D(0, 0, 0);
+
+    private float lastHeading = 0;
     
     private bool debug = false;
 
@@ -64,11 +67,25 @@ public class GPS : MonoBehaviour {
 	    factor.x = maxUnityCoords.x / (maxGCoords.x - minGCoords.x);
 	    factor.z = maxUnityCoords.z / (maxGCoords.z - minGCoords.z);
 	    factorUnit = factor;
+        Input.compass.enabled = true;
 	    //Instance = this;
         //DontDestroyOnLoad(gameObject);
 	    StartCoroutine(StartLocationService());
 	    //TranslateCoord();
 	}
+
+    private void Update(){
+        float newHeading = Input.compass.magneticHeading;
+
+        StaticScript.playerRotation = Mathf.LerpAngle(StaticScript.playerRotation, newHeading, Time.deltaTime * 2);
+        
+        transform.rotation = Quaternion.Euler(0,  StaticScript.playerRotation + 45, 0);
+        //debugText.text = StaticScript.playerRotation + "";
+        lastHeading = newHeading;
+        
+    }
+    
+    
 
     private IEnumerator StartLocationService() {
         //debugText.text = "Starting Routine";
@@ -81,6 +98,8 @@ public class GPS : MonoBehaviour {
         }
     
         Input.location.Start();
+        
+        
         
         int maxWait = 10;
         while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0){
@@ -99,9 +118,8 @@ public class GPS : MonoBehaviour {
     
             if (Input.location.status == LocationServiceStatus.Failed){
                 debugText.gameObject.SetActive(true);
-                debugText.text = "Unable to determin device location";
-                //debugText.text = "Unable to determin device location";
-                Debug.Log("Unable to determin device location");
+                debugText.text = "Unable to determine device location";
+                Debug.Log("Unable to determine device location");
                 yield break;
             }
     

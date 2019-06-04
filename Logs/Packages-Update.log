@@ -1,5 +1,13 @@
 
+<<<<<<< HEAD
+=== Tue May 21 13:28:27 2019
+=======
+<<<<<<< HEAD
+=== Wed May 22 09:00:01 2019
+=======
 Wed May 22 13:13:46 2019
+>>>>>>> a9870ffb435292a013b47b446ad0f9a1bfde39ec
+>>>>>>> 59b38cb2872c1fb26f0351c411d19e705f8403d0
 
 Packages were changed.
 Update Mode: updateDependencies
@@ -13,8 +21,22 @@ The following packages were updated:
   com.unity.analytics from version 2.0.16 to 3.3.2
   com.unity.package-manager-ui from version 1.9.11 to 2.1.2
   com.unity.purchasing from version 2.0.3 to 2.0.6
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
 
 === Thu May 23 13:36:50 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.textmeshpro@2.0.0
+>>>>>>> a9870ffb435292a013b47b446ad0f9a1bfde39ec
+>>>>>>> 59b38cb2872c1fb26f0351c411d19e705f8403d0
+
+=== Wed May 29 11:15:05 2019
 
 Packages were changed.
 Update Mode: updateDependencies

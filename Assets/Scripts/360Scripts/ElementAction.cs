@@ -1,21 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System;
 using UnityEngine;
+using UnityEngine.Internal.UIElements;
 
 public class ElementAction : MonoBehaviour {
 	
+	[Serializable]
 	public struct Action{
 		public ActionType actionType;
 		public Transform movePosition;
+		public GameObject panel;
+		public string consoleText;
 	}
-
+	
 	public enum ActionType{
 		PlaySound,
 		StopSound,
-		EnterRoom
+		EnterRoom,
+		OpenPanel,
+		ClosePanel,
+		PrintConsole
 	}
-
+	
 	public Action action;
 	
 	private AudioSource aud;
@@ -34,7 +39,16 @@ public class ElementAction : MonoBehaviour {
 				break;
 			case ActionType.EnterRoom:
 				aud.Stop();
-			//todo	
+				//todo	
+				break;
+			case ActionType.OpenPanel:
+				action.panel.SetActive(true);
+				break;
+			case ActionType.ClosePanel:
+				action.panel.SetActive(false);
+				break;
+			case ActionType.PrintConsole:
+				print(action.consoleText);
 				break;
 		}
 	}
