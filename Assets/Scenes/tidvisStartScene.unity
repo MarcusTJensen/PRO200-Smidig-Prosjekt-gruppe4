@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -45}
-  m_SizeDelta: {x: 160, y: 50.96}
+  m_AnchoredPosition: {x: 0, y: -54.6}
+  m_SizeDelta: {x: 494.4, y: 235.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895938015
 MonoBehaviour:
@@ -179,12 +179,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 1
+    m_MaxSize: 65
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -233,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000019073, y: 87}
-  m_SizeDelta: {x: 139.48, y: 88.44}
+  m_AnchoredPosition: {x: 0.0000019073, y: 413}
+  m_SizeDelta: {x: 494.4, y: 232.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897942524
 MonoBehaviour:
@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 1234594046}
   - component: {fileID: 1234594045}
   - component: {fileID: 1234594044}
+  - component: {fileID: 1234594048}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -372,6 +373,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1234594048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234594043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692afa31004c0194ea504c3b7d9e0863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadSlider: {fileID: 0}
+  loadTime: 0
+  sceneToLoad: Assets/Scenes/StartScene.unity
 --- !u!1 &1512005340
 GameObject:
   m_ObjectHideFlags: 0

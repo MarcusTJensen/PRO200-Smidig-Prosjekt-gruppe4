@@ -8,6 +8,7 @@ public class StaticScript : MonoBehaviour {
 
 
 	public static float playerRotation;
+	public static bool comingFromSettings;
 
 
 	private void Awake(){
