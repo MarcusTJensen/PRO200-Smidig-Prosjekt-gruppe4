@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: NaN, g: NaN, b: NaN, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 49867409}
   - component: {fileID: 49867408}
   m_Layer: 5
-  m_Name: Button
+  m_Name: 360Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,7 +233,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 49867411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 638599637}
+        m_MethodName: Start360
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &49867411
@@ -287,7 +298,7 @@ GameObject:
   - component: {fileID: 101168780}
   - component: {fileID: 101168783}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: MapToggleOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,13 +315,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 494289226}
+  m_Father: {fileID: 568615871}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35125002, y: 0}
   m_AnchorMax: {x: 0.65374994, y: 1}
-  m_AnchoredPosition: {x: 43.635986, y: 171.34998}
-  m_SizeDelta: {x: 80.051926, y: -342.67773}
+  m_AnchoredPosition: {x: -0.3828354, y: 85.67899}
+  m_SizeDelta: {x: 106.81106, y: -171.35773}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &101168780
 MonoBehaviour:
@@ -356,7 +367,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 101168783}
-        m_MethodName: MakeChange
+        m_MethodName: ToggleActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -417,8 +428,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e01fe207269b249898611de27f1856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetToChange: {fileID: 1297699886}
-  newState: 1
+  targetsToChange:
+  - {fileID: 1297699886}
+  - {fileID: 101168778}
+  - {fileID: 604043860}
 --- !u!1 &135427017
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,11 +480,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 135427017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 4_Paleet_og_Palehaagen_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/4_Paleet_og_Palehaagen_Scene.unity
+  header: Palehaagen
+  info: Se utenfor Palehaagen i 360
 --- !u!114 &135427020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +531,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 135427019}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -712,11 +727,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 169411084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 13_Bordtomter_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/13_Bordtomter_Scene.unity
+  header: Bordtomter
+  info: Se brygge lager i 360
 --- !u!114 &169411087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,7 +778,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 169411086}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -937,11 +954,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 197666528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 9_Pa_Tollbodbryggen_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/9_Pa_Tollbodbryggen.unity
+  header: Trollbodbryggen
+  info: Se Trollbodbryggen i 360
 --- !u!114 &197666531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +1005,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 197666530}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1197,7 +1216,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 207130269}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1255,11 +1274,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 207130264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 6_Strandgata_Tollbugata_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/6_Strandgata_Tollbugata_Scene.unity
+  header: Strandgata
+  info: Se utenfor Strandgata i 360
 --- !u!1 &286307162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,11 +1329,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 286307162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 2_Inngang_til_Paleet_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/2_Inngang_til_Paleet_Scene.unity
+  header: Paleet
+  info: Se utenfor paleet i 360
 --- !u!114 &286307165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,7 +1380,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 286307164}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1545,11 +1568,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 346589578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 10_Gronningen_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/10_Gronningen_Scene.unity
+  header: "Gr\xF8nningen"
+  info: "Se utenfor Gr\xF8nningen i 360"
 --- !u!114 &346589581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,7 +1619,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346589580}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1657,7 +1682,7 @@ GameObject:
   - component: {fileID: 348202710}
   - component: {fileID: 348202713}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoreButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1679,7 +1704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.25375, y: 1}
-  m_AnchoredPosition: {x: 132.83698, y: -0.000061035156}
+  m_AnchoredPosition: {x: 135.94, y: -171.33}
   m_SizeDelta: {x: 88.73139, y: -342.66333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348202710
@@ -1726,7 +1751,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 348202713}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: ToggleActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1758,7 +1783,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 619ee0fbb7bb95a43ab6d4ac8c497771, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3372cb6f40c9a14fae88d320501a4c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1784,11 +1809,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 348202708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 50e01fe207269b249898611de27f1856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 1
-  sceneName: 
+  targetsToChange:
+  - {fileID: 568615870}
+  - {fileID: 1603315185}
 --- !u!1 &387552272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,7 +1893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387552272}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 156.8, y: 30, z: 61.8}
+  m_LocalPosition: {x: 158, y: 30, z: 61.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1934,11 +1960,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 487969657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 5_Tollbugt_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/5_Tollbugt_Scene.unity
+  header: Tollbugata
+  info: Se utenfor Tollbugata i 360
 --- !u!114 &487969660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1983,7 +2011,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 487969659}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2059,7 +2087,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 101168779}
+  - {fileID: 568615871}
   - {fileID: 1603315186}
   - {fileID: 348202709}
   m_Father: {fileID: 738008771}
@@ -2069,6 +2097,43 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 279.2, y: -458.41}
   m_SizeDelta: {x: 241.6, y: 505.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &568615870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568615871}
+  m_Layer: 5
+  m_Name: MapToggleButtons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &568615871
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568615870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 101168779}
+  - {fileID: 604043861}
+  m_Father: {fileID: 494289226}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 44.24, y: 85.671}
+  m_SizeDelta: {x: 153.14, y: 334.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &581776410
 GameObject:
@@ -2118,11 +2183,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 581776410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 1_Kjopmann_Meyer_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/1_Kjopmann_Meyer_Scene.unity
+  header: "Kj\xF8pmann Meyer"
+  info: "Se utenfor kj\xF8pmann Meyer i 360"
 --- !u!114 &581776413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2167,7 +2234,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 581776412}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2290,6 +2357,154 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598214591}
   m_CullTransparentMesh: 0
+--- !u!1 &604043860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604043861}
+  - component: {fileID: 604043865}
+  - component: {fileID: 604043864}
+  - component: {fileID: 604043863}
+  - component: {fileID: 604043862}
+  m_Layer: 5
+  m_Name: MapToggleOn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &604043861
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604043860}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 568615871}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.35125002, y: 0}
+  m_AnchorMax: {x: 0.65374994, y: 1}
+  m_AnchoredPosition: {x: -0.3828354, y: 85.67899}
+  m_SizeDelta: {x: 106.81106, y: -171.35773}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &604043862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604043860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e01fe207269b249898611de27f1856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetsToChange:
+  - {fileID: 1297699886}
+  - {fileID: 101168778}
+  - {fileID: 604043860}
+--- !u!114 &604043863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604043860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 604043864}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 604043862}
+        m_MethodName: ToggleActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &604043864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604043860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: b97dcd1b6b975f9468f93d104e96cbc6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &604043865
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604043860}
+  m_CullTransparentMesh: 0
 --- !u!1 &638599635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,6 +2514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 638599636}
+  - component: {fileID: 638599637}
   m_Layer: 5
   m_Name: InfoCard
   m_TagString: Untagged
@@ -2326,6 +2542,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &638599637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638599635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed10b355baef764e944611d78d7a560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoCard: {fileID: 1362807234}
+  infoHeader: {fileID: 856904619}
+  infoText: {fileID: 1806573535}
 --- !u!1 &689110597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2732,7 @@ GameObject:
   - component: {fileID: 823057096}
   - component: {fileID: 823057095}
   - component: {fileID: 823057094}
-  - component: {fileID: 823057097}
+  - component: {fileID: 793343570}
   m_Layer: 5
   m_Name: 8_Utenfor_Trollboden
   m_TagString: Untagged
@@ -2509,6 +2740,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &793343570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793343569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/8_Utenfor_Trollboden_Scene.unity
+  header: Trollboden
+  info: Se utenfor Trollboden i 360
 --- !u!224 &823057093
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2571,8 +2818,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 823057097}
-        m_MethodName: LoadSelectedScene
+      - m_Target: {fileID: 793343570}
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2621,20 +2868,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793343569}
   m_CullTransparentMesh: 0
---- !u!114 &823057097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793343569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 8_Utenfor_Trollboden_Scene
 --- !u!1 &856904617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,7 +2880,7 @@ GameObject:
   - component: {fileID: 856904620}
   - component: {fileID: 856904619}
   m_Layer: 5
-  m_Name: Text
+  m_Name: HeaderText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2669,8 +2902,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132, y: 37}
-  m_SizeDelta: {x: 223.45, y: 91.71}
+  m_AnchoredPosition: {x: -61.163, y: 37}
+  m_SizeDelta: {x: 365.12, y: 91.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &856904619
 MonoBehaviour:
@@ -2699,7 +2932,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2853,11 +3086,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1118288653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 3_Fred.Olsengt_Prinsensgt_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/3_Fred.Olsengt_Prinsensgt_Scene.unity
+  header: Prinsensgate
+  info: Se utenfor Prinsensgate i 360
 --- !u!114 &1118288656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2902,7 +3137,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1118288655}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3151,11 +3386,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1233341687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 7_FredOlsensgt_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/7_FredOlsensgt_Scene.unity
+  header: Fred.Olsensgate
+  info: Se utenfor Fred.Olsensgate i 360
 --- !u!114 &1233341690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3200,7 +3437,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1233341689}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3431,7 +3668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1362807235
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3537,11 +3774,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482785898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 12_Havnebassenget_utenfor_Palehagen_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/12_Havnebassenget_utenfor_Palehagen_Scene.unity
+  header: Havnebassenget
+  info: Se Havnebassenget i 360
 --- !u!114 &1482785901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3586,7 +3825,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1482785900}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3824,12 +4063,12 @@ GameObject:
   - component: {fileID: 1603315187}
   - component: {fileID: 1603315190}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1603315186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3846,7 +4085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7475, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -46.063995, y: -171.34995}
+  m_AnchoredPosition: {x: -46.064, y: -3.5999908}
   m_SizeDelta: {x: 92.127686, y: -342.70007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1603315187
@@ -3891,7 +4130,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1603315188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1603315190}
+        m_MethodName: ButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1603315188
@@ -3914,7 +4164,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d3372cb6f40c9a14fae88d320501a4c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 619ee0fbb7bb95a43ab6d4ac8c497771, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3940,11 +4190,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603315185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: b66324f6e7366c546ae42063489ea541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 0
-  sceneName: 
+  fromSettings: 0
+  targetScene: Assets/Scenes/SettingScene.unity
 --- !u!1 &1806573533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3957,7 +4207,7 @@ GameObject:
   - component: {fileID: 1806573536}
   - component: {fileID: 1806573535}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: InfoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4073,11 +4323,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1826568627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 11_Fisketorget_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/11_Fisketorget_Scene.unity
+  header: Fisketorget
+  info: Se Fisketorget i 360
 --- !u!114 &1826568630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4122,7 +4374,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1826568629}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4219,11 +4471,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1860248122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e68edb7017ed147a81373c406054be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: 14_Havnebassenget_ved_BrinchsKran_Scene
+  infoCard: {fileID: 638599637}
+  targetScene: Assets/Scenes/Points/14_Havnebassenget_ved_BrinchsKran_Scene.unity
+  header: Brinchs Kran
+  info: Se utenfor Brinch Kran i 360
 --- !u!114 &1860248125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4268,7 +4522,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1860248124}
-        m_MethodName: LoadSelectedScene
+        m_MethodName: PointClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4317,49 +4571,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860248122}
   m_CullTransparentMesh: 0
---- !u!1 &1878276057
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1878276059}
-  - component: {fileID: 1878276058}
-  m_Layer: 0
-  m_Name: DontDestroyOnLoad
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1878276058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878276057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a497f27399f304d9a0863fed1109e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1878276059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878276057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.7, y: 0, z: 11.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2010257994
 GameObject:
   m_ObjectHideFlags: 0

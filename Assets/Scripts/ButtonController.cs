@@ -17,15 +17,16 @@ public class ButtonController : MonoBehaviour {
 	public string targetScene;
 
 	private void Update(){
-		if(fromSettings == StyleFromSetting.Hide && gameObject.activeSelf){
+		if(fromSettings == StyleFromSetting.Hide && StaticScript.comingFromSettings && gameObject.activeSelf){
 			gameObject.SetActive(false);
-		} else if (fromSettings == StyleFromSetting.Show && !gameObject.activeSelf){
+		} else if (fromSettings == StyleFromSetting.Show && StaticScript.comingFromSettings && !gameObject.activeSelf){
 			gameObject.SetActive(true);
 		}
 	}
 
 
 	public void ButtonClicked(){
+		print("Loading scene: " + targetScene);
 		StaticScript.comingFromSettings = false;
 		SceneManager.LoadScene(targetScene);
 	}

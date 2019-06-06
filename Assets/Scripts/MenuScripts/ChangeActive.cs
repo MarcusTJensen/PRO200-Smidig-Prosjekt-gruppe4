@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class ChangeActive : MonoBehaviour {
 
-	public GameObject targetToChange;
-	public bool newState;
+	public List<GameObject> targetsToChange;
 
 
+	public void ToggleActive(){
+		foreach (GameObject o in targetsToChange){
+			o.SetActive(!o.activeSelf);
+		}
+	}
 
-	public void MakeChange(){
-		newState = !newState;
-		targetToChange.SetActive(newState);
+	public void SetActive(bool active){
+		foreach (GameObject o in targetsToChange){
+			o.SetActive(active);
+		}
 	}
 	
 	

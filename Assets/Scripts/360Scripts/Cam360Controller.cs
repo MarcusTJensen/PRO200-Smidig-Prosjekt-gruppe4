@@ -9,7 +9,6 @@ public class Cam360Controller : MonoBehaviour {
 
     public Text debug;
     
-	private float timer, timeLim = 0.03333333333333333f;
 
     private void Awake(){
         //transform.rotation = Quaternion.Euler(0, StaticScript.playerRotation, 0);
