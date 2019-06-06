@@ -5,21 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/StartScene.unity
-    guid: 28f7a3dbe7b5d7547880fec214a2d1bb
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/tidvisStartScene.unity
+    guid: bf5dbe301297841479018b46ac5e1872
+  - enabled: 1
     path: Assets/Scenes/LanguageScene.unity
     guid: 3afd8ff55f78da249a5314dea532a780
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/HowToScene.unity
+    guid: 644e94b37655348768339c6cf5e88526
+  - enabled: 1
+    path: Assets/Scenes/EraSelect.unity
+    guid: 28f7a3dbe7b5d7547880fec214a2d1bb
+  - enabled: 1
     path: Assets/Scenes/ModeSelectionScene.unity
     guid: 6b8facc543800c34bb771b2fb43a4f02
   - enabled: 1
+    path: Assets/Scenes/SettingScene.unity
+    guid: fdf953c6f830f4a01a80e8de2fb5c1d7
+  - enabled: 1
     path: Assets/Scenes/MapRoamingScene.unity
     guid: 541a4e22ed03ec14db8f25e5a88e8273
-  - enabled: 0
-    path: Assets/Scenes/360TestScene.unity
-    guid: 345a3eb7a883fdd49a6511ead9af97d3
   - enabled: 1
     path: Assets/Scenes/Points/1_Kjopmann_Meyer_Scene.unity
     guid: 840190b4fee2f114f8b4261247ccd10b

@@ -197,5 +197,27 @@ PrefabInstance:
       propertyPath: texture
       value: 
       objectReference: {fileID: 2800000, guid: 4c8a9fee3869e7f4ba15917cac6b6c28, type: 3}
+    - target: {fileID: 7632859849351637538, guid: 0688aece77b03bd4187c242057157b6a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 123683690}
+    - target: {fileID: 7632859849351637538, guid: 0688aece77b03bd4187c242057157b6a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleCardboardView
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0688aece77b03bd4187c242057157b6a, type: 3}
+--- !u!114 &123683690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7527940606279168300, guid: 0688aece77b03bd4187c242057157b6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 123683689}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f9dc1015acd7a44a2187defc3c454d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
