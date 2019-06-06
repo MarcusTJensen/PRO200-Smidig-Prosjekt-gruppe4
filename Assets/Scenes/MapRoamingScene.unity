@@ -506,7 +506,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 169411084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.99999994, y: 1.0000005, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 2123891096}
@@ -514,7 +514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238.3, y: -68.5}
+  m_AnchoredPosition: {x: 224, y: -98}
   m_SizeDelta: {x: 20, y: 26.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169411086
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 197666531}
   - component: {fileID: 197666530}
   m_Layer: 5
-  m_Name: 9_Pa_Tollbodbryggen_foran_Tollboden
+  m_Name: 9_Tollbodbryggen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 286307165}
   - component: {fileID: 286307164}
   m_Layer: 5
-  m_Name: 2_Inngang_til_Paleet
+  m_Name: 2_Paleet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,7 +1072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29, y: 163.3}
+  m_AnchoredPosition: {x: 4, y: 246}
   m_SizeDelta: {x: 20, y: 26.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286307164
@@ -2953,7 +2953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.2, y: -44}
+  m_AnchoredPosition: {x: 112.2, y: 45}
   m_SizeDelta: {x: 20, y: 26.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482785900
