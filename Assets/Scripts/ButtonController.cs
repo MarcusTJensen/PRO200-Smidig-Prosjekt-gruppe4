@@ -26,7 +26,7 @@ public class ButtonController : MonoBehaviour {
 
 
 	public void ButtonClicked(){
-		print("Loading scene: " + targetScene);
+		//print("Loading scene: " + targetScene);
 		StaticScript.comingFromSettings = false;
 		SceneManager.LoadScene(targetScene);
 	}

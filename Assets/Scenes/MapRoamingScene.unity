@@ -959,8 +959,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoCard: {fileID: 638599637}
   targetScene: Assets/Scenes/Points/9_Pa_Tollbodbryggen.unity
-  header: Trollbodbryggen
-  info: Se Trollbodbryggen i 360
+  header: Tollbodbryggen
+  info: Se Tollbodbryggen i 360
 --- !u!114 &197666531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,7 +1700,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 494289226}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1869,7 +1869,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 59.39
+  orthographic size: 43.82
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1893,7 +1893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387552272}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 158, y: 30, z: 61.8}
+  m_LocalPosition: {x: 166.1, y: 30.4, z: 70.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2088,6 +2088,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 568615871}
+  - {fileID: 1603315186}
   - {fileID: 348202709}
   m_Father: {fileID: 738008771}
   m_RootOrder: 0
@@ -2112,7 +2113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &568615871
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2126,7 +2127,6 @@ RectTransform:
   m_Children:
   - {fileID: 101168779}
   - {fileID: 604043861}
-  - {fileID: 1603315186}
   m_Father: {fileID: 494289226}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2376,7 +2376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &604043861
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3977,7 +3977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1603315186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3989,12 +3989,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 568615871}
-  m_RootOrder: 2
+  m_Father: {fileID: 494289226}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.07041931, y: 81.50137}
+  m_AnchoredPosition: {x: -0.06736755, y: 244.71434}
   m_SizeDelta: {x: 160.03476, y: 162.99997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1603315187
