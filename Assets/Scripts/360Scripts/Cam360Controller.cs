@@ -7,6 +7,7 @@ public class Cam360Controller : MonoBehaviour {
     private bool vrEnabled = false;
     private bool cardboardView = false;
 
+    public GameObject backButton;
     public Text debug;
     
 
@@ -51,12 +52,14 @@ public class Cam360Controller : MonoBehaviour {
 
     public void ToggleCardboardView(){
         if(cardboardView){
+            backButton.SetActive(false);
             cardboardView = false;
             XRSettings.enabled = false;
             Screen.orientation = ScreenOrientation.Portrait;
         } else{
+            backButton.SetActive(true);
             cardboardView = true;
-            transform.rotation = Quaternion.identity;
+            //transform.rotation = Quaternion.identity;
             XRSettings.enabled = true;
             Screen.orientation = ScreenOrientation.LandscapeLeft;
         }

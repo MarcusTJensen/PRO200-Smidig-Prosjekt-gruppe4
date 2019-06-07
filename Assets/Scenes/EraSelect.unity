@@ -201,8 +201,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1583937327}
   m_HandleRect: {fileID: 1583937326}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.99970406
+  m_Value: 1.0002441
+  m_Size: 0.99958354
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -841,6 +841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fromSettings: 0
   targetScene: Assets/Scenes/ModeSelectionScene.unity
+  musicType: 1
 --- !u!114 &428377269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,7 +1263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 811.6, y: 0.37485}
+  m_AnchoredPosition: {x: 811.6, y: 0.37487793}
   m_SizeDelta: {x: -1623.2, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574369548
@@ -1548,7 +1549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -804, y: 0.27483}
+  m_AnchoredPosition: {x: -804, y: 0.27490234}
   m_SizeDelta: {x: -1608, y: -0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &770893893

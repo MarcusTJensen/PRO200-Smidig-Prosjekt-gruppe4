@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class OnLookController : MonoBehaviour{
 
 	
-	public Slider slider;
+	public Image progIndicator;
 	
 	
 	private Camera cam;
@@ -18,7 +18,7 @@ public class OnLookController : MonoBehaviour{
 
 	private void Awake(){
 		cam = GetComponent<Camera>();
-		slider.maxValue = lookTime;
+		//slider.maxValue = lookTime;
 	}
 
 	private void Update(){
@@ -44,8 +44,8 @@ public class OnLookController : MonoBehaviour{
 			objLookedAt = null;
 			elementActivated = false;
 		}
-		slider.value = lookTimer;
-		
+		//slider.value = lookTimer;
+		progIndicator.fillAmount = lookTimer / lookTime;
 	}
 	
 	
