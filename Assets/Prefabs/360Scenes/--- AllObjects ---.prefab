@@ -837,6 +837,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6391531076526654567, guid: ee4a6745efe2e3c40a3c049d988283b0,
+        type: 3}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 7529041182523409228}
     - target: {fileID: 6391531076526654564, guid: ee4a6745efe2e3c40a3c049d988283b0,
         type: 3}
       propertyPath: slider
@@ -996,7 +1001,7 @@ PrefabInstance:
     - target: {fileID: 224773287022459846, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 33.975
+      value: 33.975098
       objectReference: {fileID: 0}
     - target: {fileID: 224773287022459846, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
@@ -1011,7 +1016,7 @@ PrefabInstance:
     - target: {fileID: 114853958159320778, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114853958159320778, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
@@ -1056,6 +1061,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 114605591166340558, guid: 2cf83dd60f079784fab02ca415c34896, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf83dd60f079784fab02ca415c34896, type: 3}
+--- !u!1 &7529041182523409228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1153423453564720, guid: 2cf83dd60f079784fab02ca415c34896,
+    type: 3}
+  m_PrefabInstance: {fileID: 7527940606499351676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7739067159234216898 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224668206951690174, guid: 2cf83dd60f079784fab02ca415c34896,

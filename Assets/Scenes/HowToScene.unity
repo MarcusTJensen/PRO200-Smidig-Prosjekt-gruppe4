@@ -401,6 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fromSettings: 0
   targetScene: Assets/Scenes/MapRoamingScene.unity
+  musicType: 0
 --- !u!114 &472466270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,7 +478,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5698395c49541d247912e0b3b5e683b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a12d15a816941f246ac9c2dbdff969a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -548,6 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fromSettings: 0
   targetScene: Assets/Scenes/EraSelect.unity
+  musicType: 0
 --- !u!114 &521527402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,7 +626,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5698395c49541d247912e0b3b5e683b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a12d15a816941f246ac9c2dbdff969a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

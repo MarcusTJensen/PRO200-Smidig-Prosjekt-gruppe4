@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &278610229
 AudioSource:
   m_ObjectHideFlags: 0
@@ -856,7 +856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d83f8128b35f494188d008754ff1d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  osloHavnAud: {fileID: 278610229}
 --- !u!1 &1644029989
 GameObject:
   m_ObjectHideFlags: 0
