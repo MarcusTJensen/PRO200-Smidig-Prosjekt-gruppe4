@@ -20,8 +20,10 @@ public class Cam360Controller : MonoBehaviour {
         
 	    if(!cardboardView && vrEnabled){
 		    Quaternion rot = InputTracking.GetLocalRotation(XRNode.CenterEye);
-            transform.rotation = Quaternion.Euler(rot.eulerAngles + new Vector3(0, StaticScript.playerRotation, 0));
-            //TODO: Fix sensitivity, check nodes for change in rotation/velocity and move only if over x or something
+            //transform.rotation = Quaternion.Euler(rot.eulerAngles + new Vector3(0, StaticScript.playerRotation, 0));
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.Euler(rot.eulerAngles + new Vector3(0, StaticScript.playerRotation, 0)),
+                Time.deltaTime * 6);
 
         }
 	    
