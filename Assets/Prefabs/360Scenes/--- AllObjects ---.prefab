@@ -991,22 +991,17 @@ PrefabInstance:
     - target: {fileID: 224027289321100294, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.027508
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 224027289321100294, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.054985
-      objectReference: {fileID: 0}
-    - target: {fileID: 224027289321100294, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.05666667
+      value: 67.9
       objectReference: {fileID: 0}
     - target: {fileID: 224773287022459846, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.025000095
+      value: 33.975098
       objectReference: {fileID: 0}
     - target: {fileID: 224773287022459846, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
@@ -1016,22 +1011,7 @@ PrefabInstance:
     - target: {fileID: 224773287022459846, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.05000019
-      objectReference: {fileID: 0}
-    - target: {fileID: 224773287022459846, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.05666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 224773287022459846, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224773287022459846, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 200.01
+      value: 67.951
       objectReference: {fileID: 0}
     - target: {fileID: 114853958159320778, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
@@ -1079,21 +1059,6 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114456695915452124, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114456695915452124, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114456695915452124, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114367367663561614, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
       propertyPath: m_Sprite
@@ -1103,11 +1068,6 @@ PrefabInstance:
     - target: {fileID: 114367367663561614, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
       propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114367367663561614, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
-      propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114872538495529310, guid: 2cf83dd60f079784fab02ca415c34896,
@@ -1132,11 +1092,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114516220684264330, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
-      propertyPath: m_Text
-      value: VR
-      objectReference: {fileID: 0}
-    - target: {fileID: 114516220684264330, guid: 2cf83dd60f079784fab02ca415c34896,
-        type: 3}
       propertyPath: m_FontData.m_BestFit
       value: 1
       objectReference: {fileID: 0}
@@ -1147,8 +1102,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114516220684264330, guid: 2cf83dd60f079784fab02ca415c34896,
         type: 3}
-      propertyPath: m_FontData.m_RichText
-      value: 0
+      propertyPath: m_Text
+      value: VR
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114605591166340558, guid: 2cf83dd60f079784fab02ca415c34896, type: 3}
