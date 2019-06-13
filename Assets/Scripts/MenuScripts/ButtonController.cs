@@ -31,16 +31,19 @@ public class ButtonController : MonoBehaviour {
 		AudioController.ToggleMusic(active);
 	}
 
+	// Button click from a normal button
 	public void ButtonClicked(){
 		if(DoButtonClick())
 			StaticScript.comingFromSettings = false;
 	}
-
+	
+	// Button click from a button on the settings page
 	public void SettingsButtonClicked(){
 		if(DoButtonClick())
 			StaticScript.comingFromSettings = true;
 	}
 
+	// Common function and stuff to do for all kinds of button presses
 	private bool DoButtonClick(){
 		if (targetScene == String.Empty)
 			return false;

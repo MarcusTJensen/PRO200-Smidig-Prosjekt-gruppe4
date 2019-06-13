@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+// Mute controller for the mute button on settings page.
+// Used to swap between the mute images, and mute/unmute the music
 public class MusicMuteToggle : MonoBehaviour {
 
 	public Sprite musicEnable, musicDisable;

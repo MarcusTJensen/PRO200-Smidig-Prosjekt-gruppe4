@@ -15,6 +15,8 @@ public class StartSceneScript : MonoBehaviour {
 	private bool freeze, buttonActivated;
 	
 
+	// Animate a loading bar, faking the load time
+	// When the "loading time" is done, show a button to continue
 	private void Update(){
 		if (buttonActivated)
 			return;

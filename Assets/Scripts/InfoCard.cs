@@ -14,6 +14,7 @@ public class InfoCard : MonoBehaviour {
 		infoCard.SetActive(active);
 	}
 
+	// Set information on the info card
 	public void SetInfo(string header, string info, string scene){
 		infoHeader.text = header;
 		infoText.text = info;
