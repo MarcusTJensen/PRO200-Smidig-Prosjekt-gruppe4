@@ -7,6 +7,7 @@ public class Cam360Controller : MonoBehaviour {
     private bool vrEnabled = false;
     private bool cardboardView = false;
 
+    public GameObject backButton;
     public Text debug;
     
 
@@ -19,9 +20,10 @@ public class Cam360Controller : MonoBehaviour {
         
 	    if(!cardboardView && vrEnabled){
 		    Quaternion rot = InputTracking.GetLocalRotation(XRNode.CenterEye);
-            //transform.rotation = rot;
-            transform.rotation = Quaternion.Euler(rot.eulerAngles + new Vector3(0, StaticScript.playerRotation, 0));
-            //TODO: Fix sensitivity, check nodes for change in rotation/velocity and move only if over x or something
+            //transform.rotation = Quaternion.Euler(rot.eulerAngles + new Vector3(0, StaticScript.playerRotation, 0));
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.Euler(rot.eulerAngles + new Vector3(0, StaticScript.playerRotation, 0)),
+                Time.deltaTime * 6);
 
         }
 	    
@@ -51,12 +53,16 @@ public class Cam360Controller : MonoBehaviour {
 
     public void ToggleCardboardView(){
         if(cardboardView){
+            backButton.SetActive(true);
             cardboardView = false;
             XRSettings.enabled = false;
             Screen.orientation = ScreenOrientation.Portrait;
         } else{
+            backButton.SetActive(false);
             cardboardView = true;
-            transform.rotation = Quaternion.identity;
+            float rotY = transform.rotation.y;
+            transform.rotation = Quaternion.Euler(0, rotY + 180, 0);
+            
             XRSettings.enabled = true;
             Screen.orientation = ScreenOrientation.LandscapeLeft;
         }

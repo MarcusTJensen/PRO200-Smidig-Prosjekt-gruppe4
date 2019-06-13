@@ -1,26 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class OnLookController : MonoBehaviour{
 
-	
-	public Slider slider;
-	
-	
 	private Camera cam;
 	private GameObject objLookedAt;
-	private float lookTimer;
-	private float lookTime = 2f;
-	private bool elementActivated = false;
+	private ElementAction targetElement;
 
 	private void Awake(){
 		cam = GetComponent<Camera>();
-		slider.maxValue = lookTime;
 	}
 
+	//Shoot ray/laser from center of camera to detect objects in front of where the player is looking
 	private void Update(){
 		
 		Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
@@ -28,24 +18,15 @@ public class OnLookController : MonoBehaviour{
 		if(Physics.Raycast(ray, out hit, 50f)){
 			if(objLookedAt != hit.transform.gameObject){
 				objLookedAt = hit.transform.gameObject;
-				lookTimer = 0;
+				targetElement = objLookedAt.GetComponent<ElementAction>();
 			}
-			if(lookTimer < lookTime){
-				lookTimer += Time.deltaTime;
-			} else{
-				//TODO: Activate look action on other object
-				if (!elementActivated){
-					elementActivated = true;
-					objLookedAt.GetComponent<ElementAction>().DoAction();
-				}
-			}
+			targetElement.Progress();
 		} else{
-			lookTimer = 0;
+			if (targetElement != null)
+				targetElement.Reset();
 			objLookedAt = null;
-			elementActivated = false;
+			targetElement = null;
 		}
-		slider.value = lookTimer;
-		
 	}
 	
 	

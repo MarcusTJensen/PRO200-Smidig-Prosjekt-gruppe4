@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PointScript : MonoBehaviour {
 
@@ -12,14 +10,9 @@ public class PointScript : MonoBehaviour {
 	public string header;
 	public string info;
 
-	
-	
+
 	public void PointClick(){
 		infoCard.SetInfo(header, info, targetScene);
 		infoCard.SetActive(true);
 	}
-
-
-
-
 }

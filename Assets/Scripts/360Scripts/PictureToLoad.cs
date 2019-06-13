@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PictureToLoad : MonoBehaviour{
 
@@ -10,6 +8,7 @@ public class PictureToLoad : MonoBehaviour{
 	private Material mat;
 
 
+	//Change the source image of the material to change image on load
 	private void Awake(){
 		mat = GetComponent<MeshRenderer>().materials[0];
 		mat.mainTexture = texture;

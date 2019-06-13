@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Assertions.Comparers;
 using UnityEngine.UI;
 
 public class GPS : MonoBehaviour {
@@ -48,30 +47,13 @@ public class GPS : MonoBehaviour {
     private float lastHeading = 0;
     
     private bool debug = false;
-
-    /*
-    private void DoCalcTest(){
-        
-        double fac = maxUnityCoords.x / (maxGCoords.x - minGCoords.x);
-        //print(maxUnityCoords.x + " / (" + maxGCoords.x + " - " + minGCoords.x + ") = " + fac);
-        
-        double posi = fac * (latitude - minGCoords.x);
-        //print(fac + " * (" + latitude + " - " + minGCoords.x + ") = " + posi);
-        
-    }
-    */
     
 	private void Start(){
-	    //DoCalcTest();
-	    //return;
 	    factor.x = maxUnityCoords.x / (maxGCoords.x - minGCoords.x);
 	    factor.z = maxUnityCoords.z / (maxGCoords.z - minGCoords.z);
 	    factorUnit = factor;
         Input.compass.enabled = true;
-	    //Instance = this;
-        //DontDestroyOnLoad(gameObject);
 	    StartCoroutine(StartLocationService());
-	    //TranslateCoord();
 	}
 
     private void Update(){
@@ -86,9 +68,8 @@ public class GPS : MonoBehaviour {
     }
     
     
-
+    //Co-routine to get GPS coords from the phone
     private IEnumerator StartLocationService() {
-        //debugText.text = "Starting Routine";
         yield return new WaitForSeconds(2);
         
         if (!Input.location.isEnabledByUser){
@@ -125,20 +106,6 @@ public class GPS : MonoBehaviour {
     
             latitude = Input.location.lastData.latitude;
             longitude = Input.location.lastData.longitude;
-
-            /*
-            switch(Input.location.status){
-                case LocationServiceStatus.Failed:
-                    //debugText.text = "Failed";
-                    break;
-                case LocationServiceStatus.Running:
-                    //debugText.text = "Running";
-                    break;
-                case LocationServiceStatus.Stopped:
-                    //debugText.text = "Stopped";
-                    break;
-            }
-            */
             
             TranslateCoord();
             
@@ -147,6 +114,10 @@ public class GPS : MonoBehaviour {
         
     }
 
+    //Calculate where to put th marker in the unity world.
+    //This is also dependent on how big the map snippet is, and will need a change if
+    // the map is changed. Best thing is to replace this with some plugin to get google maps
+    // directly into unity.
     private void TranslateCoord(){
 
 
@@ -158,27 +129,6 @@ public class GPS : MonoBehaviour {
         transform.position = pos.GetVecFloat();
         
         text.text = latitude + " : " + longitude;
-
-        //double t = factor.x * (latitude - minGCoords.x);
-        //print(t + " = " + factor.x + " * (" + latitude + " - " + minGCoords.x + ")");
-        /*
-        if(!debug){
-            
-            string sLat = latitude.ToString().Substring(4);
-            sLat = sLat.Insert(1, ".");
-            latitude = float.Parse(sLat);
-        
-            string sLng = longitude.ToString().Substring(4);
-            sLng = sLng.Insert(1, ".");
-            longitude = float.Parse(sLng);
-
-            float fLng = longitude * 12.97f;
-            float fLat = latitude * 12.97f;
-            longitude = fLng;
-            latitude = fLat;
-            
-        }
-        */
 
     }
 

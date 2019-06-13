@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour {
 
-	public GameObject targetToChange;
-	public bool newState;
+	public Renderer targetToChange;
+	public Color originalColor, targetColor;
+	public bool switchToTargetColor = true;
 
 
-
-	public void MakeChange(){
-		targetToChange.SetActive(newState);
+	public void ToggleColor(){
+		if (switchToTargetColor){
+			targetToChange.material.color = targetColor;
+			switchToTargetColor = false;
+		} else{
+			targetToChange.material.color = originalColor;
+			switchToTargetColor = true;
+		}
 	}
 	
 	

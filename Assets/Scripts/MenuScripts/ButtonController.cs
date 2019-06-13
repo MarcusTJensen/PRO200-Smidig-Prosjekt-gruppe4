@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour {
@@ -12,9 +13,11 @@ public class ButtonController : MonoBehaviour {
 		Hide,
 		Show
 	}
-
+	
 	[HideInInspector]
 	public string targetScene;
+
+	public AudioController.Music musicType;
 
 	private void Update(){
 		if(fromSettings == StyleFromSetting.Hide && StaticScript.comingFromSettings && gameObject.activeSelf){
@@ -24,18 +27,30 @@ public class ButtonController : MonoBehaviour {
 		}
 	}
 
+	public void MusicToggle(bool active){
+		AudioController.ToggleMusic(active);
+	}
 
 	public void ButtonClicked(){
-		//print("Loading scene: " + targetScene);
-		StaticScript.comingFromSettings = false;
-		SceneManager.LoadScene(targetScene);
+		if(DoButtonClick())
+			StaticScript.comingFromSettings = false;
 	}
 
 	public void SettingsButtonClicked(){
-		StaticScript.comingFromSettings = true;
-		SceneManager.LoadScene(targetScene);
+		if(DoButtonClick())
+			StaticScript.comingFromSettings = true;
 	}
 
+	private bool DoButtonClick(){
+		if (targetScene == String.Empty)
+			return false;
+		if (musicType != AudioController.Music.None){
+			AudioController.SetActiveMusic(musicType);
+			AudioController.ToggleMusic(true);
+		}
+		SceneManager.LoadScene(targetScene);
+		return true;
+	}
 
 
 }
