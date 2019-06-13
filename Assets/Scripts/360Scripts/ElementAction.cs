@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Internal.UIElements;
+using UnityEngine.UI;
 
 public class ElementAction : MonoBehaviour {
 	
@@ -10,6 +10,7 @@ public class ElementAction : MonoBehaviour {
 		public Transform movePosition;
 		public GameObject panel;
 		public string consoleText;
+		public float lookTime;
 	}
 	
 	public enum ActionType{
@@ -20,15 +21,43 @@ public class ElementAction : MonoBehaviour {
 		ClosePanel,
 		PrintConsole
 	}
-	
+
+	public Slider progresBar;
 	public Action action;
 	
 	private AudioSource aud;
+	private float lookTimer;
+	private bool actionDone;
 
 	private void Awake(){
 		aud = GetComponent<AudioSource>();
+		progresBar.maxValue = action.lookTime;
 	}
 
+
+	public void Reset(){
+		lookTimer = 0;
+		progresBar.gameObject.SetActive(false);
+		actionDone = false;
+	}
+	
+	//Update progress bar and timer before action happens
+	public void Progress(){
+		if (lookTimer < action.lookTime && !actionDone){
+			if (!progresBar.gameObject.activeSelf)
+				progresBar.gameObject.SetActive(true);
+			lookTimer += Time.deltaTime;
+			progresBar.value = lookTimer;
+		} else{
+			if (!actionDone){
+				DoAction();
+				actionDone = true;
+				progresBar.gameObject.SetActive(false);
+			}
+		}
+	}
+	
+	//What happens with different actions
 	public void DoAction(){
 		switch(action.actionType){
 			case ActionType.PlaySound:
@@ -39,7 +68,6 @@ public class ElementAction : MonoBehaviour {
 				break;
 			case ActionType.EnterRoom:
 				aud.Stop();
-				//todo	
 				break;
 			case ActionType.OpenPanel:
 				action.panel.SetActive(true);

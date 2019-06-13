@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fromSettings: 0
   targetScene: Assets/Scenes/MapRoamingScene.unity
+  musicType: 0
 --- !u!1 &1290255701251086
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +339,6 @@ GameObject:
   - component: {fileID: 222090164482923136}
   - component: {fileID: 114367367663561614}
   - component: {fileID: 114212386265876062}
-  - component: {fileID: 114605591166340558}
   m_Layer: 5
   m_Name: ToggleVRButton
   m_TagString: Untagged
@@ -459,20 +459,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114605591166340558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361061568639586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83102865f35f9584ba9ec8888e063b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneIndex: -1
-  sceneName: MapRoamingScene
 --- !u!1 &1627902477108284
 GameObject:
   m_ObjectHideFlags: 0

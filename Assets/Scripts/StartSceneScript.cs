@@ -9,15 +9,14 @@ public class StartSceneScript : MonoBehaviour {
 	public float loadTime;
 	public float randomInterval;
 	public float freezeTime;
-	[HideInInspector]
-	public string sceneToLoad;
+	public GameObject nextButton;
 
 	private float loadTimer, randomTimer, freezeTimer;
-	private bool freeze, sceneLoaded;
+	private bool freeze, buttonActivated;
 	
 
 	private void Update(){
-		if (sceneLoaded)
+		if (buttonActivated)
 			return;
 		randomTimer += Time.deltaTime;
 		if (randomTimer > randomInterval){
@@ -40,8 +39,8 @@ public class StartSceneScript : MonoBehaviour {
 			loadTimer += Time.deltaTime;
 			loadSlider.fillAmount = (loadTimer / loadTime);
 		} else{
-			sceneLoaded = true;
-			SceneManager.LoadScene(sceneToLoad);
+			buttonActivated = true;
+			nextButton.SetActive(true);
 		}
 	}
 }

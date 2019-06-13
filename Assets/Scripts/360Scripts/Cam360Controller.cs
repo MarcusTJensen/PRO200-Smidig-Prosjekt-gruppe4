@@ -60,7 +60,9 @@ public class Cam360Controller : MonoBehaviour {
         } else{
             backButton.SetActive(false);
             cardboardView = true;
-            transform.rotation = Quaternion.identity;
+            float rotY = transform.rotation.y;
+            transform.rotation = Quaternion.Euler(0, rotY + 180, 0);
+            
             XRSettings.enabled = true;
             Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
