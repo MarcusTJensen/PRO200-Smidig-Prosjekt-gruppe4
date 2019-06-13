@@ -8,7 +8,7 @@ public class ChangeInteractive : MonoBehaviour {
 	public bool swap;
 
 
-
+	
 	public void MakeChange(){
 		if(swap){
 			targetToChange.interactable = !targetToChange.interactable;

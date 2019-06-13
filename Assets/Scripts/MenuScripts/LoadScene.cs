@@ -7,7 +7,8 @@ public class LoadScene : MonoBehaviour{
 	public int sceneIndex = -1;
 	public string sceneName;
 
-
+	// Load scene based on name/path or build index
+	// Prioritises build index
 	public void LoadSelectedScene(){
 		if(sceneIndex >= 0){
 			SceneManager.LoadScene(sceneIndex);

@@ -10,7 +10,8 @@ public class ToggleOpacity : MonoBehaviour {
 	public float alphaLow, alphaHigh;
 	public bool setAlphaHigh;
 
-
+	// Toggle between two chosen alpha values
+	// Will change on all items in the image and text lists
 	public void ToggleAlpha(){
 		if (setAlphaHigh){
 			setAlphaHigh = false;
@@ -20,7 +21,8 @@ public class ToggleOpacity : MonoBehaviour {
 			SetAlpha(alphaLow);
 		}
 	}
-
+	
+	// Set the alpha of an image/text
 	private void SetAlpha(float alpha){
 		foreach (Image image in imageList){
 			Color col = image.color;

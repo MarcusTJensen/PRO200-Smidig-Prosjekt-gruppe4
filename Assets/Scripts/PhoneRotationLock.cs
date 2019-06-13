@@ -10,10 +10,6 @@ public class PhoneRotationLock : MonoBehaviour{
 		DisableLandscape();
 	}
 
-
-
-
-
 	public void DisableLandscape(){
 		Screen.autorotateToLandscapeLeft = false;
 		Screen.autorotateToLandscapeRight = false;

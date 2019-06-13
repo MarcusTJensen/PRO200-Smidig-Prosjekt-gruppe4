@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChangeColor : MonoBehaviour {
 
@@ -8,7 +6,7 @@ public class ChangeColor : MonoBehaviour {
 	public Color originalColor, targetColor;
 	public bool switchToTargetColor = true;
 
-
+	// Toggle between colors
 	public void ToggleColor(){
 		if (switchToTargetColor){
 			targetToChange.material.color = targetColor;
